@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ simple single server """
 from flask import Flask
 app = Flask(__name__)
