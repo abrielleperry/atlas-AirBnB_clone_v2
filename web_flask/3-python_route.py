@@ -22,7 +22,7 @@ def text_route(text):
     text = text.replace('_', ' ')
     return f"C {text}"
 
-
+@app.route('/python/')
 @app.route('/python/<text>')
 def python_route(text='is cool'):
     """ handles route /python/<text> defaults is cool """
