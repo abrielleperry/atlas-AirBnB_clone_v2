@@ -15,11 +15,13 @@ def hbnb_route():
     """ handles route /hbnb and returns string """
     return "HBNB"
 
+
 @app.route('/c/<text>')
 def text_route(text):
     """ handles route /c/<text> and returns string replacing underscores with spaces"""
     text = text.replace('_', ' ')
     return f"C {text}"
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port='5000')
