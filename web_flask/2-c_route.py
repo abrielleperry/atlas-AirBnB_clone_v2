@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+""" simple single server """
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_route():
+    """ display greeting """
+    return "Hello HBNB!"
+
+
+@app.route('/hbnb')
+def hbnb_route():
+    """ handles route /hbnb and returns string """
+    return "HBNB"
+
+@app.route('/c/<text>')
+def text_route():
+    """ handles route /hbnb and returns string """
+    return "C"
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port='5000')
