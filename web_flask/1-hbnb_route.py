@@ -11,7 +11,7 @@ def hello_route():
 
 @app.route('/hbnb')
 def hbnb_route():
-    """ display greeting """
+    """ handles route /hbnb and returns string """
     return "HBNB"
 
 if __name__ == '__main__':
