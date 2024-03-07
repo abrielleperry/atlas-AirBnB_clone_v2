@@ -24,9 +24,9 @@ def text_route(text):
 
 @app.route('/python/<text>')
 def python_route(text='is cool'):
-    """ handles route /c/<text> returns string replacing _ with spaces """
+    """ handles route /python/<text> defaults is cool """
     text = text.replace('_', ' ')
-    return "Python {text}"
+    return f"Python {text}"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port='5000')
