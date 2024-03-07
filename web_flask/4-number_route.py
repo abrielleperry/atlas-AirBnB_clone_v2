@@ -30,6 +30,9 @@ def python_route(text='is cool'):
     text = text.replace('_', ' ')
     return f"Python {text}"
 
+@app.route('/number/')
+@app.route('/number/<n>')
+def number_route(n):
 
 
 if __name__ == '__main__':
