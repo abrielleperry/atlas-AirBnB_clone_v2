@@ -33,7 +33,9 @@ def python_route(text='is cool'):
 @app.route('/number/')
 @app.route('/number/<n>')
 def number_route(n):
-
+    """ handles route /python/<text>, optional parameter, defaults is cool """
+    if n.isdigit:
+        return f"{n} is a number"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port='5000')
