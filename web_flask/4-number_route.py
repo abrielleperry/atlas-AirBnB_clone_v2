@@ -31,7 +31,6 @@ def python_route(text='is cool'):
     return f"Python {text}"
 
 
-@app.route('/number/')
 @app.route('/number/<int:n>')
 def number_route(n):
     """ handles route /number/<n>, optional parameter """
