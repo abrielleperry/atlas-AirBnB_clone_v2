@@ -39,7 +39,7 @@ def number_route(n):
 
 @app.route('/number_template/<int:n>')
 def display_number_route(n):
-    """ handles route /number/<n>, optional parameter """
+    """ handles route /number_template/<int:n>, displays html if n is int """
     return render_template('5-number.html', n=n)
 
 
