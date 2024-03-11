@@ -5,5 +5,8 @@
   </HEAD>
   <BODY>
     <H1> States </H1>
+    <UL> {% for states in State %}
+        <LI> State: <state.id>: <B><state.name></B> </LI>
+    </UL>
   </BODY>
 </HTML>
