@@ -19,7 +19,7 @@ class State(BaseModel, Base):
         name = ""
 
     @property
-    def get_cities(self):
+    def cities(self):
         """ public getter for cities """
         if models.storage_t != "db":
             city_list = []
