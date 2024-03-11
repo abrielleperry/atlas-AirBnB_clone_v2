@@ -7,11 +7,11 @@ app = Flask(__name__)
 @app.route('/states_list')
 def get_db():
     """ display greeting """
-    states = sorted(list(storage.all("State").values()))
-    return render_template(7-states_list.html, states=states)
+    states = sorted(list(storage.all("State").values()), key=lambda state: state.name)
+    return render_template('7-states_list.html', states=states)
 
 @app.teardown_appcontext
-def close_db():
+def close_db(exception=None):
     """ teardown database """
     storage.close()
 
