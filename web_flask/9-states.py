@@ -6,12 +6,17 @@ from models import storage
 app = Flask(__name__)
 
 
-@app.route('/cities_by_states', strict_slashes=False)
-def cities_by_states():
+@app.route('/states', strict_slashes=False)
+def states():
     """ display greeting """
     states = storage.all("State").values()
-    return render_template('8-cities_by_states.html', states=states)
+    return render_template('9-states.html', states=states)
 
+@app.route('/states/<id>', strict_slashes=False)
+def states_id():
+    """ display greeting """
+    states = storage.all("State").values()
+    return render_template('9-states.html', states=states)
 
 @app.teardown_appcontext
 def close_db(close):
