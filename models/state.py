@@ -18,10 +18,10 @@ class State(BaseModel, Base):
     else:
         name = ""
 
-    @property
-    def cities(self):
-        """ public getter for cities """
-        if models.storage_t != "db":
+    if models.storage_t != "db":
+        @property
+        def cities(self):
+            """ public getter for cities """
             city_list = []
             all_city = models.storage.all(City)
             for city in all_city.values():
