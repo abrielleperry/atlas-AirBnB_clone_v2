@@ -7,17 +7,17 @@ app = Flask(__name__)
 
 
 @app.route('/states', strict_slashes=False)
-def states():
+def list_states():
     """ display greeting """
     states = storage.all("State").values()
     return render_template('9-states.html', states=states)
 
 
 @app.route('/states/<id>', strict_slashes=False)
-def states_id():
+def states_id(state_id):
     """ display greeting """
-    states = storage.all("State").values()
-    return render_template('9-states.html', states=states)
+    state = storage.all("State").get(state_id)
+    return render_template('9-states.html', state=state)
 
 
 @app.teardown_appcontext
