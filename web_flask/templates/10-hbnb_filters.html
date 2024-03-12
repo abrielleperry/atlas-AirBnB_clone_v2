@@ -35,10 +35,9 @@
 					<h3>Amenities</h3>
 					<h4>&nbsp</h4>
 					<ul class="popover">
-						<li><h4>Internet</h4></li>
-						<li><h4>TV</h4></li>
-						<li><h4>Kitchen</h4></li>
-						<li><h4>Iron</h4></li>
+            {% for amenities in amenities %}
+						<li><h4>{{ amenities.name }}</h4></li>
+            {% endfor %}
 					</ul>
 				</div>
 

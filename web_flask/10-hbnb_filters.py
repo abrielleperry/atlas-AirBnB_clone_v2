@@ -10,7 +10,8 @@ app = Flask(__name__)
 def hbnb_filters():
     """ display greeting """
     states = storage.all("State").values()
-    return render_template('10-hbnb_filters.html', states=states)
+    amenities = storage.all("Amenity").values()
+    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
 
 
 @app.teardown_appcontext
