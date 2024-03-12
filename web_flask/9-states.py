@@ -5,12 +5,14 @@ from models import storage
 
 app = Flask(__name__)
 
+
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
 def list_states(id=None):
     """ display greeting """
     states = storage.all("State").values()
     return render_template('9-states.html', states=states, id=id)
+
 
 @app.teardown_appcontext
 def close_db(close):
