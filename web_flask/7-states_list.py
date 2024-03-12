@@ -5,7 +5,7 @@ from models import storage
 app = Flask(__name__)
 
 
-@app.route('/states_list')
+@app.route('/states_list', strict_slashes=False)
 def get_db():
     """ display greeting """
     states = storage.all("State").values()
@@ -13,7 +13,7 @@ def get_db():
 
 
 @app.teardown_appcontext
-def close_db(exception=None):
+def close_db(close):
     """ teardown database """
     storage.close()
 
