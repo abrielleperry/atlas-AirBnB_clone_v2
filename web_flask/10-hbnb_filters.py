@@ -3,15 +3,19 @@
 from flask import Flask, render_template, request
 from models import storage
 
+
 app = Flask(__name__)
 
 
-@app.route('/hbnb_filters', strict_slashes=False)
+@app.route('/hbnb_filters')
 def hbnb_filters():
     """ display greeting """
     states = storage.all("State").values()
     amenities = storage.all("Amenity").values()
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    return render_template(
+        '10-hbnb_filters.html',
+        states=states,
+        amenities=amenities)
 
 
 @app.teardown_appcontext
