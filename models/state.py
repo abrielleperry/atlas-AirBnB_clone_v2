@@ -17,6 +17,7 @@ class State(BaseModel, Base):
         cities = relationship("City", backref="state")
     else:
         name = ""
+        cities = []
 
     if models.storage_t != "db":
         @property

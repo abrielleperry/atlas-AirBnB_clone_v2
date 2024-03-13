@@ -16,6 +16,6 @@ class Amenity(BaseModel, Base):
     else:
         name = ""
 
-    def __init__(self, *args, **kwargs):
-        """initializes Amenity"""
-        super().__init__(*args, **kwargs)
+        place_amenities = relationship("Place", secondary="place_amenity",
+                                   viewonly=False)
+
