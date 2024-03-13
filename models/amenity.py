@@ -13,9 +13,15 @@ class Amenity(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'amenities'
         name = Column(String(128), nullable=False)
-    else:
-        name = ""
 
-    def __init__(self, *args, **kwargs):
-        """initializes Amenity"""
-        super().__init__(*args, **kwargs)
+    else:
+        @property
+        def amenities(self):
+            """ public getter for cities """
+            amen_list = []
+            all_amen = models.storage.all(Amenity)
+            for amenity in all_amen.values():
+                if amenity == self.id:
+                    amen_list.append(amenity)
+            return amen_list
+
