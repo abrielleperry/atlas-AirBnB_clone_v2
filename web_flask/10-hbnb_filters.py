@@ -18,7 +18,12 @@ def hbnb_filters():
     """ display greeting """
     states = storage.all("State").values()
     amenities = storage.all("Amenity").values()
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    cities = storage.all("City").values()
+    return render_template(
+        '10-hbnb_filters.html',
+        states=states,
+        amenities=amenities,
+        cities=cities)
 
 
 @app.teardown_appcontext
